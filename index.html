@@ -7,180 +7,63 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #F5F2ED;
-    --surface: #FDFCF9;
-    --surface2: #F0EDE7;
-    --border: #E0DAD0;
-    --border-strong: #C8BFB0;
-    --text: #1C1A17;
-    --text-muted: #6B6358;
-    --text-hint: #9C9389;
-    --accent: #2D5016;
-    --accent-light: #EEF5E6;
-    --accent-border: #A8C887;
-    --danger: #8B1A1A;
-    --danger-light: #FBF0F0;
-    --danger-border: #D4A0A0;
-    --amber: #7A4F00;
-    --amber-light: #FEF7E6;
-    --amber-border: #F0C97A;
+    --bg: #F5F2ED; --surface: #FDFCF9; --surface2: #F0EDE7;
+    --border: #E0DAD0; --border-strong: #C8BFB0;
+    --text: #1C1A17; --text-muted: #6B6358; --text-hint: #9C9389;
+    --accent: #2D5016; --accent-light: #EEF5E6; --accent-border: #A8C887;
+    --danger: #8B1A1A; --danger-light: #FBF0F0; --danger-border: #D4A0A0;
+    --amber: #7A4F00; --amber-light: #FEF7E6; --amber-border: #F0C97A;
+    --blue: #1A3D6B; --blue-light: #EAF2FB; --blue-border: #7AAFD4;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 
   header {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    padding: 1.5rem 2rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    padding: 1.5rem 2rem; display: flex; align-items: center; gap: 1rem;
+    position: sticky; top: 0; z-index: 100;
   }
-
-  .logo-icon {
-    width: 40px; height: 40px;
-    background: var(--accent);
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-  }
+  .logo-icon { width: 40px; height: 40px; background: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .logo-icon svg { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 1.8; }
-
   header h1 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; font-weight: 400; }
   header p { font-size: 0.8rem; color: var(--text-hint); font-weight: 300; }
-
   .header-right { margin-left: auto; }
-
-  .btn-add {
-    background: var(--accent);
-    color: #fff;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: opacity 0.15s;
-  }
+  .btn-add { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.2rem; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; transition: opacity 0.15s; }
   .btn-add:hover { opacity: 0.87; }
 
   main { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .section-title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-hint); margin-bottom: 0.75rem; }
 
-  .section-title {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-hint);
-    margin-bottom: 0.75rem;
-  }
-
-  .stats-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  .stat-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1rem 1.25rem;
-  }
+  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; }
   .stat-label { font-size: 0.75rem; color: var(--text-hint); margin-bottom: 4px; }
   .stat-value { font-size: 1.6rem; font-family: 'DM Serif Display', serif; color: var(--text); }
 
-  .search-bar {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 0.6rem 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    margin-bottom: 1.5rem;
-  }
+  .search-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 0.6rem 1rem; display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.5rem; }
   .search-bar svg { width: 16px; height: 16px; stroke: var(--text-hint); flex-shrink: 0; fill: none; }
-  .search-bar input {
-    border: none; background: transparent;
-    font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
-    color: var(--text); width: 100%; outline: none;
-  }
+  .search-bar input { border: none; background: transparent; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--text); width: 100%; outline: none; }
   .search-bar input::placeholder { color: var(--text-hint); }
 
   .doc-list { display: flex; flex-direction: column; gap: 0.75rem; }
 
-  .doc-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
-    transition: border-color 0.15s;
-  }
+  .doc-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: border-color 0.15s; }
   .doc-card:hover { border-color: var(--border-strong); }
 
-  .doc-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 1.25rem;
-    cursor: pointer;
-    user-select: none;
-  }
-
-  .doc-icon {
-    width: 38px; height: 38px;
-    background: var(--accent-light);
-    border-radius: 9px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-  }
+  .doc-header { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; cursor: pointer; user-select: none; }
+  .doc-icon { width: 38px; height: 38px; background: var(--accent-light); border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .doc-icon svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 1.8; }
-
   .doc-info { flex: 1; min-width: 0; }
-
-  .doc-name {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
+  .doc-name { font-size: 0.95rem; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .doc-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 4px; }
-
   .badge { font-size: 0.68rem; font-weight: 500; padding: 3px 8px; border-radius: 5px; }
   .badge-pieces { background: var(--accent-light); color: var(--accent); border: 1px solid var(--accent-border); }
   .badge-none   { background: var(--danger-light); color: var(--danger); border: 1px solid var(--danger-border); }
-  .badge-note   { background: var(--amber-light);  color: var(--amber);  border: 1px solid var(--amber-border); }
+  .badge-note   { background: var(--amber-light); color: var(--amber); border: 1px solid var(--amber-border); }
+  .badge-files  { background: var(--blue-light); color: var(--blue); border: 1px solid var(--blue-border); }
 
   .doc-actions { display: flex; gap: 0.4rem; align-items: center; }
-
-  .btn-icon {
-    width: 32px; height: 32px;
-    border-radius: 7px;
-    border: 1px solid var(--border);
-    background: transparent;
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    transition: all 0.12s;
-  }
+  .btn-icon { width: 32px; height: 32px; border-radius: 7px; border: 1px solid var(--border); background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.12s; }
   .btn-icon svg { width: 14px; height: 14px; stroke-width: 1.8; fill: none; }
   .btn-icon:hover { background: var(--surface2); border-color: var(--border-strong); }
   .btn-icon.danger:hover { background: var(--danger-light); border-color: var(--danger-border); }
@@ -189,94 +72,57 @@
   .chevron { transition: transform 0.2s; stroke: var(--text-hint); }
   .doc-card.open .chevron { transform: rotate(90deg); }
 
-  .doc-body {
-    display: none;
-    border-top: 1px solid var(--border);
-    padding: 1rem 1.25rem;
-    background: var(--bg);
-  }
+  .doc-body { display: none; border-top: 1px solid var(--border); padding: 1rem 1.25rem; background: var(--bg); }
   .doc-card.open .doc-body { display: block; }
 
-  .subsection-label {
-    font-size: 0.72rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-hint);
-    margin-bottom: 0.6rem;
-  }
+  .subsection-label { font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-hint); margin-bottom: 0.6rem; }
 
-  .pieces-list { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.6rem; }
+  /* Pieces */
+  .pieces-list { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.6rem; }
 
   .piece-row {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.5rem 0.75rem;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
   }
 
-  .piece-bullet {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--accent-border);
-    flex-shrink: 0;
-  }
-
+  .piece-main { display: flex; align-items: center; gap: 0.6rem; padding: 0.55rem 0.75rem; }
+  .piece-bullet { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-border); flex-shrink: 0; }
   .piece-name { flex: 1; font-size: 0.85rem; color: var(--text); }
 
-  .btn-remove-piece {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    width: 22px; height: 22px;
-    border-radius: 5px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    transition: background 0.12s;
+  .piece-file-badge {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 0.68rem; font-weight: 500;
+    background: var(--blue-light); color: var(--blue); border: 1px solid var(--blue-border);
+    padding: 2px 7px; border-radius: 4px; cursor: pointer; white-space: nowrap;
+    transition: opacity 0.12s;
   }
+  .piece-file-badge:hover { opacity: 0.75; }
+  .piece-file-badge svg { width: 10px; height: 10px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+  .btn-attach {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 0.68rem; color: var(--text-hint);
+    background: transparent; border: 1px dashed var(--border-strong);
+    padding: 2px 7px; border-radius: 4px; cursor: pointer; white-space: nowrap;
+    transition: all 0.12s; font-family: 'DM Sans', sans-serif;
+  }
+  .btn-attach:hover { color: var(--blue); border-color: var(--blue-border); background: var(--blue-light); }
+  .btn-attach svg { width: 10px; height: 10px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+  .btn-remove-piece { background: transparent; border: none; cursor: pointer; width: 22px; height: 22px; border-radius: 5px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.12s; }
   .btn-remove-piece svg { width: 12px; height: 12px; fill: none; stroke: var(--text-hint); stroke-width: 2; }
   .btn-remove-piece:hover { background: var(--danger-light); }
   .btn-remove-piece:hover svg { stroke: var(--danger); }
 
   .add-piece-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
-
-  .add-piece-row input {
-    flex: 1;
-    font-family: 'DM Sans', sans-serif; font-size: 0.85rem;
-    color: var(--text); background: var(--surface);
-    border: 1px solid var(--border); border-radius: 8px;
-    padding: 0.45rem 0.75rem; outline: none;
-    transition: border-color 0.15s;
-  }
+  .add-piece-row input { flex: 1; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.45rem 0.75rem; outline: none; transition: border-color 0.15s; }
   .add-piece-row input:focus { border-color: var(--accent-border); }
   .add-piece-row input::placeholder { color: var(--text-hint); }
-
-  .btn-add-piece {
-    background: var(--accent-light);
-    color: var(--accent);
-    border: 1px solid var(--accent-border);
-    border-radius: 8px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.82rem; font-weight: 500;
-    padding: 0.45rem 0.9rem;
-    cursor: pointer; white-space: nowrap;
-    transition: opacity 0.12s;
-  }
+  .btn-add-piece { background: var(--accent-light); color: var(--accent); border: 1px solid var(--accent-border); border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 500; padding: 0.45rem 0.9rem; cursor: pointer; white-space: nowrap; transition: opacity 0.12s; }
   .btn-add-piece:hover { opacity: 0.8; }
 
   .note-area { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border); }
   .note-area label { font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-hint); display: block; margin-bottom: 0.4rem; }
-  .note-area textarea {
-    width: 100%;
-    font-family: 'DM Sans', sans-serif; font-size: 0.82rem;
-    color: var(--text); background: var(--surface);
-    border: 1px solid var(--border); border-radius: 8px;
-    padding: 0.6rem 0.8rem; resize: vertical; min-height: 56px;
-    outline: none; transition: border-color 0.15s;
-  }
+  .note-area textarea { width: 100%; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 0.8rem; resize: vertical; min-height: 56px; outline: none; transition: border-color 0.15s; }
   .note-area textarea:focus { border-color: var(--accent-border); }
 
   .empty-state { text-align: center; padding: 4rem 2rem; color: var(--text-hint); }
@@ -284,64 +130,23 @@
   .empty-state h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; font-weight: 400; color: var(--text-muted); margin-bottom: 0.4rem; }
   .empty-state p { font-size: 0.85rem; }
 
-  .modal-overlay {
-    position: fixed; inset: 0;
-    background: rgba(28,26,23,0.55);
-    display: flex; align-items: center; justify-content: center;
-    z-index: 200; padding: 1rem;
-    opacity: 0; pointer-events: none;
-    transition: opacity 0.18s;
-  }
+  /* Modal */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(28,26,23,0.55); display: flex; align-items: center; justify-content: center; z-index: 200; padding: 1rem; opacity: 0; pointer-events: none; transition: opacity 0.18s; }
   .modal-overlay.active { opacity: 1; pointer-events: all; }
-
-  .modal {
-    background: var(--surface);
-    border-radius: 16px; border: 1px solid var(--border);
-    width: 100%; max-width: 460px; padding: 1.5rem;
-    transform: translateY(8px); transition: transform 0.18s;
-  }
+  .modal { background: var(--surface); border-radius: 16px; border: 1px solid var(--border); width: 100%; max-width: 460px; padding: 1.5rem; transform: translateY(8px); transition: transform 0.18s; }
   .modal-overlay.active .modal { transform: translateY(0); }
-
   .modal h2 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 1.25rem; }
-
   .form-group { margin-bottom: 1rem; }
   .form-group label { display: block; font-size: 0.78rem; font-weight: 500; color: var(--text-muted); margin-bottom: 0.35rem; }
-  .form-group input, .form-group textarea {
-    width: 100%;
-    font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
-    color: var(--text); background: var(--bg);
-    border: 1px solid var(--border); border-radius: 8px;
-    padding: 0.6rem 0.85rem; outline: none; transition: border-color 0.15s;
-  }
+  .form-group input, .form-group textarea { width: 100%; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 0.85rem; outline: none; transition: border-color 0.15s; }
   .form-group input:focus, .form-group textarea:focus { border-color: var(--accent-border); }
-
   .modal-footer { display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 1.5rem; }
-
-  .btn-cancel {
-    background: transparent; border: 1px solid var(--border);
-    padding: 0.55rem 1.1rem; border-radius: 8px;
-    font-family: 'DM Sans', sans-serif; font-size: 0.85rem;
-    cursor: pointer; transition: background 0.12s;
-  }
+  .btn-cancel { background: transparent; border: 1px solid var(--border); padding: 0.55rem 1.1rem; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; cursor: pointer; transition: background 0.12s; }
   .btn-cancel:hover { background: var(--surface2); }
-
-  .btn-confirm {
-    background: var(--accent); color: #fff; border: none;
-    padding: 0.55rem 1.2rem; border-radius: 8px;
-    font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500;
-    cursor: pointer; transition: opacity 0.12s;
-  }
+  .btn-confirm { background: var(--accent); color: #fff; border: none; padding: 0.55rem 1.2rem; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: opacity 0.12s; }
   .btn-confirm:hover { opacity: 0.87; }
 
-  .toast {
-    position: fixed; bottom: 1.5rem; left: 50%;
-    transform: translateX(-50%) translateY(20px);
-    background: var(--text); color: #fff;
-    font-size: 0.82rem; padding: 0.55rem 1.1rem;
-    border-radius: 8px; opacity: 0;
-    transition: all 0.2s; z-index: 300;
-    pointer-events: none; white-space: nowrap;
-  }
+  .toast { position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--text); color: #fff; font-size: 0.82rem; padding: 0.55rem 1.1rem; border-radius: 8px; opacity: 0; transition: all 0.2s; z-index: 300; pointer-events: none; white-space: nowrap; }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
   @media (max-width: 600px) {
@@ -372,18 +177,9 @@
 
 <main>
   <div class="stats-row">
-    <div class="stat-card">
-      <div class="stat-label">Démarches</div>
-      <div class="stat-value" id="stat-docs">0</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">Pièces listées</div>
-      <div class="stat-value" id="stat-pieces">0</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">Complètes</div>
-      <div class="stat-value" id="stat-complete">0</div>
-    </div>
+    <div class="stat-card"><div class="stat-label">Démarches</div><div class="stat-value" id="stat-docs">0</div></div>
+    <div class="stat-card"><div class="stat-label">Pièces listées</div><div class="stat-value" id="stat-pieces">0</div></div>
+    <div class="stat-card"><div class="stat-label">Fichiers joints</div><div class="stat-value" id="stat-files">0</div></div>
   </div>
 
   <div class="search-bar">
@@ -414,37 +210,32 @@
 </div>
 
 <div class="toast" id="toast"></div>
+<input type="file" id="file-input" multiple style="display:none" onchange="handleFileUpload(event)">
 
 <script>
 let docs = [];
+let currentUploadDocId = null;
+let currentUploadPieceId = null;
 
-function save() {
-  localStorage.setItem('admin-docs-v2', JSON.stringify(docs));
-}
-
-function load() {
-  try {
-    const raw = localStorage.getItem('admin-docs-v2');
-    if (raw) docs = JSON.parse(raw);
-  } catch(e) { docs = []; }
-}
-
+function save() { localStorage.setItem('admin-docs-v3', JSON.stringify(docs)); }
+function load() { try { const r = localStorage.getItem('admin-docs-v3'); if (r) docs = JSON.parse(r); } catch(e) { docs = []; } }
 function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2); }
-
-function escHtml(str) {
-  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
+function escHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function fmtSize(b) { if (b < 1024) return b + ' o'; if (b < 1048576) return Math.round(b/1024) + ' ko'; return (b/1048576).toFixed(1) + ' Mo'; }
 
 function renderList() {
   const q = document.getElementById('search-input').value.toLowerCase();
   const container = document.getElementById('doc-list');
   const filtered = docs.filter(d => d.name.toLowerCase().includes(q));
 
-  let totalPieces = 0, complete = 0;
-  docs.forEach(d => { totalPieces += d.pieces.length; if (d.pieces.length > 0) complete++; });
+  let totalPieces = 0, totalFiles = 0;
+  docs.forEach(d => {
+    totalPieces += d.pieces.length;
+    d.pieces.forEach(p => { if (p.file) totalFiles++; });
+  });
   document.getElementById('stat-docs').textContent = docs.length;
   document.getElementById('stat-pieces').textContent = totalPieces;
-  document.getElementById('stat-complete').textContent = complete;
+  document.getElementById('stat-files').textContent = totalFiles;
 
   if (filtered.length === 0) {
     container.innerHTML = `<div class="empty-state">
@@ -455,7 +246,9 @@ function renderList() {
     return;
   }
 
-  container.innerHTML = filtered.map(doc => `
+  container.innerHTML = filtered.map(doc => {
+    const filesCount = doc.pieces.filter(p => p.file).length;
+    return `
     <div class="doc-card" id="card-${doc.id}">
       <div class="doc-header" onclick="toggleCard('${doc.id}')">
         <div class="doc-icon">
@@ -465,9 +258,9 @@ function renderList() {
           <div class="doc-name">${escHtml(doc.name)}</div>
           <div class="doc-badges">
             ${doc.pieces.length > 0
-              ? `<span class="badge badge-pieces">${doc.pieces.length} pièce${doc.pieces.length > 1 ? 's' : ''} requise${doc.pieces.length > 1 ? 's' : ''}</span>`
-              : `<span class="badge badge-none">Aucune pièce listée</span>`
-            }
+              ? `<span class="badge badge-pieces">${doc.pieces.length} pièce${doc.pieces.length > 1 ? 's' : ''}</span>`
+              : `<span class="badge badge-none">Aucune pièce</span>`}
+            ${filesCount > 0 ? `<span class="badge badge-files">${filesCount} fichier${filesCount > 1 ? 's' : ''} joint${filesCount > 1 ? 's' : ''}</span>` : ''}
             ${doc.note ? `<span class="badge badge-note">Note</span>` : ''}
           </div>
         </div>
@@ -481,17 +274,29 @@ function renderList() {
 
       <div class="doc-body" id="body-${doc.id}">
         <p class="subsection-label">Pièces nécessaires</p>
-
         <div class="pieces-list">
           ${doc.pieces.length === 0
             ? `<p style="font-size:0.8rem;color:var(--text-hint);font-style:italic;padding:0.2rem 0">Aucune pièce ajoutée.</p>`
             : doc.pieces.map(p => `
               <div class="piece-row">
-                <div class="piece-bullet"></div>
-                <span class="piece-name">${escHtml(p.name)}</span>
-                <button class="btn-remove-piece" onclick="removePiece('${doc.id}','${p.id}')" title="Supprimer">
-                  <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                </button>
+                <div class="piece-main">
+                  <div class="piece-bullet"></div>
+                  <span class="piece-name">${escHtml(p.name)}</span>
+                  ${p.file
+                    ? `<span class="piece-file-badge" onclick="downloadPieceFile('${doc.id}','${p.id}')" title="Télécharger ${escHtml(p.file.name)}">
+                        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        ${escHtml(p.file.name)} · ${fmtSize(p.file.size)}
+                        <span onclick="event.stopPropagation();removePieceFile('${doc.id}','${p.id}')" style="margin-left:3px;opacity:0.6;cursor:pointer" title="Retirer le fichier">✕</span>
+                      </span>`
+                    : `<button class="btn-attach" onclick="triggerPieceUpload('${doc.id}','${p.id}')">
+                        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        Joindre
+                      </button>`
+                  }
+                  <button class="btn-remove-piece" onclick="removePiece('${doc.id}','${p.id}')" title="Supprimer">
+                    <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  </button>
+                </div>
               </div>`).join('')
           }
         </div>
@@ -506,17 +311,15 @@ function renderList() {
           <textarea rows="2" placeholder="Lieu, horaires, délai, contact…" onchange="updateNote('${doc.id}', this.value)">${escHtml(doc.note || '')}</textarea>
         </div>
       </div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
 }
 
 function toggleCard(id) {
   const card = document.getElementById('card-' + id);
   const wasOpen = card.classList.contains('open');
   card.classList.toggle('open');
-  if (!wasOpen) {
-    setTimeout(() => { const inp = document.getElementById('piece-input-' + id); if (inp) inp.focus(); }, 50);
-  }
+  if (!wasOpen) setTimeout(() => { const inp = document.getElementById('piece-input-' + id); if (inp) inp.focus(); }, 50);
 }
 
 function addPiece(docId) {
@@ -525,27 +328,66 @@ function addPiece(docId) {
   if (!name) { inp.focus(); return; }
   const doc = docs.find(d => d.id === docId);
   if (!doc) return;
-  doc.pieces.push({ id: uid(), name });
-  save();
-  inp.value = '';
+  doc.pieces.push({ id: uid(), name, file: null });
+  save(); inp.value = '';
   renderList();
   document.getElementById('card-' + docId).classList.add('open');
-  setTimeout(() => { const inp2 = document.getElementById('piece-input-' + docId); if (inp2) inp2.focus(); }, 30);
+  setTimeout(() => { const i = document.getElementById('piece-input-' + docId); if (i) i.focus(); }, 30);
   showToast('Pièce ajoutée');
 }
 
-function pieceKeydown(e, docId) {
-  if (e.key === 'Enter') { e.preventDefault(); addPiece(docId); }
-}
+function pieceKeydown(e, docId) { if (e.key === 'Enter') { e.preventDefault(); addPiece(docId); } }
 
 function removePiece(docId, pieceId) {
   const doc = docs.find(d => d.id === docId);
   if (!doc) return;
   doc.pieces = doc.pieces.filter(p => p.id !== pieceId);
-  save();
-  renderList();
+  save(); renderList();
   document.getElementById('card-' + docId).classList.add('open');
   showToast('Pièce supprimée');
+}
+
+function triggerPieceUpload(docId, pieceId) {
+  currentUploadDocId = docId;
+  currentUploadPieceId = pieceId;
+  document.getElementById('file-input').click();
+}
+
+function handleFileUpload(e) {
+  const file = e.target.files[0];
+  if (!file || !currentUploadDocId || !currentUploadPieceId) return;
+  const doc = docs.find(d => d.id === currentUploadDocId);
+  const piece = doc ? doc.pieces.find(p => p.id === currentUploadPieceId) : null;
+  if (!piece) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    piece.file = { name: file.name, size: file.size, type: file.type, data: ev.target.result };
+    save(); renderList();
+    document.getElementById('card-' + currentUploadDocId).classList.add('open');
+    showToast('Fichier joint');
+  };
+  reader.readAsDataURL(file);
+  e.target.value = '';
+}
+
+function downloadPieceFile(docId, pieceId) {
+  const doc = docs.find(d => d.id === docId);
+  const piece = doc ? doc.pieces.find(p => p.id === pieceId) : null;
+  if (!piece || !piece.file) return;
+  const a = document.createElement('a');
+  a.href = piece.file.data;
+  a.download = piece.file.name;
+  a.click();
+}
+
+function removePieceFile(docId, pieceId) {
+  const doc = docs.find(d => d.id === docId);
+  const piece = doc ? doc.pieces.find(p => p.id === pieceId) : null;
+  if (!piece) return;
+  piece.file = null;
+  save(); renderList();
+  document.getElementById('card-' + docId).classList.add('open');
+  showToast('Fichier retiré');
 }
 
 function updateNote(docId, value) {
@@ -564,9 +406,7 @@ function closeModal() {
   document.getElementById('new-doc-note').value = '';
 }
 
-function closeModalOut(e) {
-  if (e.target === document.getElementById('modal-overlay')) closeModal();
-}
+function closeModalOut(e) { if (e.target === document.getElementById('modal-overlay')) closeModal(); }
 
 function addDocument() {
   const name = document.getElementById('new-doc-name').value.trim();
@@ -574,9 +414,7 @@ function addDocument() {
   const note = document.getElementById('new-doc-note').value.trim();
   const newDoc = { id: uid(), name, note, pieces: [] };
   docs.push(newDoc);
-  save();
-  closeModal();
-  renderList();
+  save(); closeModal(); renderList();
   setTimeout(() => {
     const card = document.getElementById('card-' + newDoc.id);
     if (card) { card.classList.add('open'); const inp = document.getElementById('piece-input-' + newDoc.id); if (inp) inp.focus(); }
@@ -587,15 +425,13 @@ function addDocument() {
 function deleteDoc(id) {
   if (!confirm('Supprimer cette démarche et toutes ses pièces ?')) return;
   docs = docs.filter(d => d.id !== id);
-  save();
-  renderList();
+  save(); renderList();
   showToast('Démarche supprimée');
 }
 
 function showToast(msg) {
   const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
+  t.textContent = msg; t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 2000);
 }
 
@@ -609,4 +445,3 @@ renderList();
 </script>
 </body>
 </html>
-
